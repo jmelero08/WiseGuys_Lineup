@@ -5,3 +5,8 @@
     user will see dates for comic, location, and info on the comic. 
 2. classes
     2a. class relationships
+
+Classes 
+-Comedians 
+-CLI
+-Scraper 
