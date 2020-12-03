@@ -2,4 +2,4 @@
 
 require_relative '../lib/WiseGuys_lineup'
 
-WiseGuysLineup::CLI.new.call
+WiseGuysLineup::CLI.new.call 
