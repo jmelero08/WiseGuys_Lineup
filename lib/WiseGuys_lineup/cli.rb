@@ -9,14 +9,13 @@ class WiseGuysLineup::CLI
     end
 
     def get_locations
-        #can be scrapped instead
-        @locations = ["Ogden", "Salt Lake City", "Jordan Landing"]
+        @locations = WiseGuysLineup::Locations.all 
     end
     
     def list_locations
         puts 'Choose location to see lineup.'
         @locations.each.with_index(1) do |location, index|
-            puts "#{index}. #{location}"
+            puts "#{index}. #{location.name}"
         end 
     end
 
@@ -31,6 +30,6 @@ class WiseGuysLineup::CLI
 
     def show_lineup_for(chosen_location)
         location = @locations[chosen_location - 1]
-        puts "Here are the comics for #{location}"
+        puts "Here are the comics for #{location.name}"
     end
 end 
