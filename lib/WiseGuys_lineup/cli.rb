@@ -30,6 +30,10 @@ class WiseGuysLineup::CLI
 
     def show_lineup_for(chosen_location)
         location = @locations[chosen_location - 1]
+        location.get_comics 
         puts "Here are the comics for #{location.name}"
+        location.comics.each.with_index(1) do |comic, index|
+            puts "#{index}. #{comic.name}"
+        end
     end
 end 

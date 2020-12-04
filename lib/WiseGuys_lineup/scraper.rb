@@ -7,4 +7,9 @@ class WiseGuysLineup::Scraper
             WiseGuysLineup::Locations.new(name)
           end
     end
+
+    def self.scrape_comics(location) 
+        WiseGuysLineup::Comics.new("Jose", location)
+        WiseGuysLineup::Comics.new("Jasmine", location)
+    end
 end
