@@ -4,8 +4,6 @@ class WiseGuysLineup::CLI
         get_locations
         list_locations
         get_user_location
-        #get_comics_for(location)
-        #list_comics
     end
 
     def get_locations
@@ -36,4 +34,4 @@ class WiseGuysLineup::CLI
             puts "#{index}. #{comic.name}"
         end
     end
-end 
+end

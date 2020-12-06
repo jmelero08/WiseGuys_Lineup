@@ -1,10 +1,11 @@
 class WiseGuysLineup::Locations 
-    attr_accessor :name, :comics 
+    attr_accessor :name, :comics, :ref 
 
     @@all = []
 
-    def initialize(name)
+    def initialize(name, ref)
         @name = name
+        @ref = ref
         @comics = []
         save 
     end
@@ -15,8 +16,7 @@ class WiseGuysLineup::Locations
     end
 
     def get_comics 
-        WiseGuysLineup::Scraper.scrape_comics(self) if @comics.empty?
-        @comics 
+        WiseGuysLineup::Scraper.scrape_comics(self) if @comics.empty? 
     end
 
     def save

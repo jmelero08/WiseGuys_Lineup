@@ -1,11 +1,12 @@
 class WiseGuysLineup::Comics 
-    attr_accessor :name, :location   
+    attr_accessor :name, :location, :url   
 
     @@all = []
 
-    def initialize(name, location)
+    def initialize(name, location, url)
         @name = name
         @location = location
+        @url = url 
         add_to_location
         save 
     end
