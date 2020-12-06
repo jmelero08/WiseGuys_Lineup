@@ -1,28 +1,16 @@
 # WiseGuysLineup
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/WiseGuys_lineup`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This ruby gem provides a CLI to view the schedualded comedians at either of the three WiseGuys comedy clubs in Utah. 
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'WiseGuys_lineup'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
 
     $ gem install WiseGuys_lineup
 
 ## Usage
 
-TODO: Write usage instructions here
+Type the below and follow the on screen prompts.
+
+    $ ./bin/wiseguys_lineup
 
 ## Development
 
