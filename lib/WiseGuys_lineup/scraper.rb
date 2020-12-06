@@ -15,13 +15,13 @@ class WiseGuysLineup::Scraper
         comics = doc.css("div.row.event-catalog a") 
         comics.each do |c|
             name = c.css('span.event-summary_title').text
-            url = c.css('a').attr('href')
+            url = c.attr('href')
             WiseGuysLineup::Comics.new(name, location, url)
         end
     end
 
-    def self.scrape_comic_info(comic)
-        url = "https://www.wiseguyscomedy.com/events/#{comic.url}"
+    def self.scrape_key_info(comic)
+        url = "https://www.wiseguyscomedy.com#{comic.url}"
         doc = Nokogiri::HTML(open(url))
         info = doc.css("p.description.d-none")
         info.each do |i|

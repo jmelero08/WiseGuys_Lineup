@@ -20,8 +20,8 @@ class WiseGuysLineup::Comics
         @location.comics << self unless @location.comics.include?(self)
     end
 
-    def get_comic_info
-        WiseGuysLineup::Scraper.scrape_comic_info(self) if @key_info.empty?
+    def get_comic_details
+        WiseGuysLineup::Scraper.scrape_key_info(self) if @key_info.empty?
     end 
 
     def save

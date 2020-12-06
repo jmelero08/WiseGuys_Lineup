@@ -38,18 +38,18 @@ class WiseGuysLineup::CLI
         location.comics.each.with_index(1) do |comic, index|
             puts "#{index}. #{comic.name}"
         end
-        get_comic_info(location)
+        get_user_comic(location)
     end
 
-    def get_comic_info(location)
+    def get_user_comic(location)
         puts "Choose a comic to get more details."
         input = gets.strip
         comic = location.comics[input.to_i - 1]
-        comic.get_comic_info
-        show_comic_info(comic)
+        comic.get_comic_details
+        show_comic_details(comic)
     end
 
-    def show_comic_info(comic)
+    def show_comic_details(comic)
         puts comic.name
         comic.key_info.each {|i| puts "- #{i}"}
     end 
