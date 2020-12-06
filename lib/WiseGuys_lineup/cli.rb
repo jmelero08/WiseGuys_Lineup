@@ -1,9 +1,14 @@
 class WiseGuysLineup::CLI
     def call
         puts "\nWelcome to WiseGuys Comedy Club!\n"
-        get_locations
-        list_locations
-        get_user_location
+        @input = ""
+        until @input == "exit"
+            get_locations
+            list_locations
+            get_user_location
+            done?
+        end
+        goodbye
     end
 
     def get_locations
@@ -33,5 +38,28 @@ class WiseGuysLineup::CLI
         location.comics.each.with_index(1) do |comic, index|
             puts "#{index}. #{comic.name}"
         end
+        get_comic_info(location)
     end
+
+    def get_comic_info(location)
+        puts "Choose a comic to get more details."
+        input = gets.strip
+        comic = location.comics[input.to_i - 1]
+        comic.get_comic_info
+        show_comic_info(comic)
+    end
+
+    def show_comic_info(comic)
+        puts comic.name
+        comic.key_info.each {|i| puts "- #{i}"}
+    end 
+      
+    def done?
+        puts "Are you done? Type 'exit' to exit or hit any key to go back to locations."
+        @input = gets.strip
+    end 
+      
+    def goodbye
+        puts "Enjoy The Show!"
+    end 
 end

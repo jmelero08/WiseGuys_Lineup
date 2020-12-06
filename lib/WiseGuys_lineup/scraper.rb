@@ -19,4 +19,14 @@ class WiseGuysLineup::Scraper
             WiseGuysLineup::Comics.new(name, location, url)
         end
     end
+
+    def self.scrape_comic_info(comic)
+        url = "https://www.wiseguyscomedy.com/events/#{comic.url}"
+        doc = Nokogiri::HTML(open(url))
+        info = doc.css("p.description.d-none")
+        info.each do |i|
+          info = i.text.strip
+          comic.key_info << info
+        end 
+    end
 end
